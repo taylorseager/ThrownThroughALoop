@@ -6,13 +6,12 @@ Console.WriteLine(greeting);
 
 Console.WriteLine("Please enter a product name: ");
 
-string response = Console.ReadLine();
+string response = Console.ReadLine().Trim();
 
-if (string.IsNullOrWhiteSpace(response))
+while (string.IsNullOrEmpty(response))
 {
-    Console.WriteLine("You didn't choose anything!");
+    Console.WriteLine("You didn't choose anything, try again!");
+    response = Console.ReadLine().Trim();
 }
-else
-{
-    Console.WriteLine($"You chose: {response}");
-}
+
+Console.WriteLine($"You chose: {response}");
