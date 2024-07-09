@@ -1,11 +1,60 @@
 ﻿// See https://aka.ms/new-console-template for more information
-List<string> products = new List<string>()
+List<Product> products = new List<Product>()
 {
-    "Football",
-    "Hockey Stick",
-    "Boomerang",
-    "Frisbee",
-    "Golf Putter"
+  new Product()
+  {
+    Name = "Football",
+    Price = 15,
+    Sold = false
+  }
+   new Product()
+  {
+    Name = "Hockey Stick",
+    Price = 25,
+    Sold = false
+  }
+   new Product()
+  {
+    Name = "Boomerang",
+    Price = 5,
+    Sold = true
+  }
+   new Product()
+  {
+    Name = "Frisbee",
+    Price = 7,
+    Sold = false
+  }
+    new Product()
+  {
+    Name = "Golf Putter",
+    Price = 17,
+    Sold = false
+  }
+     new Product()
+  {
+    Name = "Hockey helmet",
+    Price = 50,
+    Sold = false
+  }
+   new Product()
+  {
+    Name = "Soccer ball",
+    Price = 9,
+    Sold = true
+  }
+   new Product()
+  {
+    Name = "Baseball bat",
+    Price = 12,
+    Sold = false
+  }
+    new Product()
+  {
+    Name = "Softball",
+    Price = 7,
+    Sold = false
+  }
 };
 
 string greeting = @"Welcome to Thrown For a Loop
@@ -28,4 +77,4 @@ while (response > products.Count || response < 1)
     response = int.Parse(Console.ReadLine().Trim());
 }
 
-Console.WriteLine($"You chose: {response}");
+Console.WriteLine($"You chose: {products[response - 1]}");
