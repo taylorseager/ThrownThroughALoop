@@ -4,74 +4,83 @@ List<Product> products = new List<Product>()
   new Product()
   {
     Name = "Football",
-    Price = 15,
+    Price = 13.95,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
-    ManufactureYear = 2010
+    ManufactureYear = 2010,
+    Condition = 4.2
   },
    new Product()
   {
     Name = "Hockey Stick",
-    Price = 25,
+    Price = 25.99,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
-    ManufactureYear = 2010
+    ManufactureYear = 2010,
+    Condition = 3.9
   },
    new Product()
   {
     Name = "Boomerang",
-    Price = 5,
+    Price = 5.50,
     Sold = true,
     StockDate = new DateTime(2022, 10, 20),
-    ManufactureYear = 2010
+    ManufactureYear = 2010,
+    Condition = 4.1
   },
    new Product()
   {
     Name = "Frisbee",
-    Price = 7,
+    Price = 7.99,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
-    ManufactureYear = 2010
+    ManufactureYear = 2010,
+    Condition = 3.9
   },
     new Product()
   {
     Name = "Golf Putter",
-    Price = 17,
+    Price = 17.45,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
-    ManufactureYear = 2010
+    ManufactureYear = 2010,
+    Condition = 3.7
   },
      new Product()
   {
     Name = "Hockey helmet",
-    Price = 50,
+    Price = 49.99,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
-    ManufactureYear = 2010
+    ManufactureYear = 2010,
+    Condition = 4.8
   },
    new Product()
   {
     Name = "Soccer ball",
-    Price = 9,
+    Price = 9.87,
     Sold = true,
     StockDate = new DateTime(2022, 10, 20),
-    ManufactureYear = 2010
+    ManufactureYear = 2010,
+    Condition = 4.5
   },
    new Product()
   {
     Name = "Baseball bat",
-    Price = 12,
+    Price = 12.13,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
-    ManufactureYear = 2010
+    ManufactureYear = 2010,
+    Condition = 3.2
   },
     new Product()
   {
     Name = "Softball",
-    Price = 7,
+    Price = 7.00,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
-    ManufactureYear = 2010
+    ManufactureYear = 2010,
+    Condition = 4.0
   }
 };
 
@@ -95,7 +104,7 @@ while (response > products.Count || response < 1)
     response = int.Parse(Console.ReadLine().Trim());
 }
  Product chosenProduct = products[response - 1];
- 
+
 DateTime now = DateTime.Now;
 
 TimeSpan timeInStock = now - chosenProduct.StockDate;
