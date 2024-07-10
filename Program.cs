@@ -4,7 +4,7 @@ List<Product> products = new List<Product>()
   new Product()
   {
     Name = "Football",
-    Price = 13.95,
+    Price = 13.95M,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
     ManufactureYear = 2010,
@@ -13,7 +13,7 @@ List<Product> products = new List<Product>()
    new Product()
   {
     Name = "Hockey Stick",
-    Price = 25.99,
+    Price = 25.99M,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
     ManufactureYear = 2010,
@@ -22,7 +22,7 @@ List<Product> products = new List<Product>()
    new Product()
   {
     Name = "Boomerang",
-    Price = 5.50,
+    Price = 5.50M,
     Sold = true,
     StockDate = new DateTime(2022, 10, 20),
     ManufactureYear = 2010,
@@ -31,7 +31,7 @@ List<Product> products = new List<Product>()
    new Product()
   {
     Name = "Frisbee",
-    Price = 7.99,
+    Price = 7.99M,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
     ManufactureYear = 2010,
@@ -40,7 +40,7 @@ List<Product> products = new List<Product>()
     new Product()
   {
     Name = "Golf Putter",
-    Price = 17.45,
+    Price = 17.45M,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
     ManufactureYear = 2010,
@@ -49,7 +49,7 @@ List<Product> products = new List<Product>()
      new Product()
   {
     Name = "Hockey helmet",
-    Price = 49.99,
+    Price = 49.99M,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
     ManufactureYear = 2010,
@@ -58,7 +58,7 @@ List<Product> products = new List<Product>()
    new Product()
   {
     Name = "Soccer ball",
-    Price = 9.87,
+    Price = 9.87M,
     Sold = true,
     StockDate = new DateTime(2022, 10, 20),
     ManufactureYear = 2010,
@@ -67,7 +67,7 @@ List<Product> products = new List<Product>()
    new Product()
   {
     Name = "Baseball bat",
-    Price = 12.13,
+    Price = 12.13M,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
     ManufactureYear = 2010,
@@ -76,7 +76,7 @@ List<Product> products = new List<Product>()
     new Product()
   {
     Name = "Softball",
-    Price = 7.00,
+    Price = 7.00M,
     Sold = false,
     StockDate = new DateTime(2022, 10, 20),
     ManufactureYear = 2010,
@@ -87,6 +87,16 @@ List<Product> products = new List<Product>()
 string greeting = @"Welcome to Thrown For a Loop
 Your one-stop shop for used sporting equipment";
 
+decimal totalValue = 0.0M;
+foreach (Product product in products)
+{
+    if (!product.Sold)
+    {
+        totalValue += product.Price;
+    }
+}
+Console.WriteLine($"Total inventory value: ${totalValue}");
+
 Console.WriteLine(greeting);
 
 Console.WriteLine("Products:");
@@ -94,16 +104,30 @@ for (int i = 0; i < products.Count; i++)
 {
     Console.WriteLine($"{i + 1}. {products[i].Name}");
 }
-Console.WriteLine("Please enter a product number: ");
+Product chosenProduct = null;
 
-int response = int.Parse(Console.ReadLine().Trim());
-
-while (response > products.Count || response < 1)
+while (chosenProduct == null)
 {
-    Console.WriteLine("Choose a number between 1 and 5!");
-    response = int.Parse(Console.ReadLine().Trim());
+    Console.WriteLine("Please enter a product number: ");
+    try
+{
+   int response = int.Parse(Console.ReadLine().Trim());
+   chosenProduct = products[response - 1];
 }
- Product chosenProduct = products[response - 1];
+catch (FormatException)
+{
+   Console.WriteLine("Please type only integers!");
+}
+catch (ArgumentOutOfRangeException)
+{
+   Console.WriteLine("Please choose an existing item only!");
+}
+catch (Exception ex)
+{
+   Console.WriteLine(ex);
+   Console.WriteLine("Do Better!");
+}
+}
 
 DateTime now = DateTime.Now;
 
