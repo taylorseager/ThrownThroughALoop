@@ -5,55 +5,73 @@ List<Product> products = new List<Product>()
   {
     Name = "Football",
     Price = 15,
-    Sold = false
+    Sold = false,
+    StockDate = new DateTime(2022, 10, 20),
+    ManufactureYear = 2010
   },
    new Product()
   {
     Name = "Hockey Stick",
     Price = 25,
-    Sold = false
+    Sold = false,
+    StockDate = new DateTime(2022, 10, 20),
+    ManufactureYear = 2010
   },
    new Product()
   {
     Name = "Boomerang",
     Price = 5,
-    Sold = true
+    Sold = true,
+    StockDate = new DateTime(2022, 10, 20),
+    ManufactureYear = 2010
   },
    new Product()
   {
     Name = "Frisbee",
     Price = 7,
-    Sold = false
+    Sold = false,
+    StockDate = new DateTime(2022, 10, 20),
+    ManufactureYear = 2010
   },
     new Product()
   {
     Name = "Golf Putter",
     Price = 17,
-    Sold = false
+    Sold = false,
+    StockDate = new DateTime(2022, 10, 20),
+    ManufactureYear = 2010
   },
      new Product()
   {
     Name = "Hockey helmet",
     Price = 50,
-    Sold = false
+    Sold = false,
+    StockDate = new DateTime(2022, 10, 20),
+    ManufactureYear = 2010
   },
    new Product()
   {
     Name = "Soccer ball",
     Price = 9,
-    Sold = true
+    Sold = true,
+    StockDate = new DateTime(2022, 10, 20),
+    ManufactureYear = 2010
   },
    new Product()
   {
     Name = "Baseball bat",
     Price = 12,
-    Sold = false
+    Sold = false,
+    StockDate = new DateTime(2022, 10, 20),
+    ManufactureYear = 2010
   },
     new Product()
   {
     Name = "Softball",
     Price = 7,
-    Sold = false
+    Sold = false,
+    StockDate = new DateTime(2022, 10, 20),
+    ManufactureYear = 2010
   }
 };
 
