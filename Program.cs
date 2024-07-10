@@ -6,49 +6,49 @@ List<Product> products = new List<Product>()
     Name = "Football",
     Price = 15,
     Sold = false
-  }
+  },
    new Product()
   {
     Name = "Hockey Stick",
     Price = 25,
     Sold = false
-  }
+  },
    new Product()
   {
     Name = "Boomerang",
     Price = 5,
     Sold = true
-  }
+  },
    new Product()
   {
     Name = "Frisbee",
     Price = 7,
     Sold = false
-  }
+  },
     new Product()
   {
     Name = "Golf Putter",
     Price = 17,
     Sold = false
-  }
+  },
      new Product()
   {
     Name = "Hockey helmet",
     Price = 50,
     Sold = false
-  }
+  },
    new Product()
   {
     Name = "Soccer ball",
     Price = 9,
     Sold = true
-  }
+  },
    new Product()
   {
     Name = "Baseball bat",
     Price = 12,
     Sold = false
-  }
+  },
     new Product()
   {
     Name = "Softball",
@@ -65,7 +65,7 @@ Console.WriteLine(greeting);
 Console.WriteLine("Products:");
 for (int i = 0; i < products.Count; i++)
 {
-    Console.WriteLine($"{i + 1}. {products[i]}");
+    Console.WriteLine($"{i + 1}. {products[i].Name}");
 }
 Console.WriteLine("Please enter a product number: ");
 
@@ -77,4 +77,5 @@ while (response > products.Count || response < 1)
     response = int.Parse(Console.ReadLine().Trim());
 }
 
-Console.WriteLine($"You chose: {products[response - 1]}");
+Product chosenProduct = products[response - 1];
+Console.WriteLine($"You chose: {chosenProduct.Name}, which costs {chosenProduct.Price} dollars and is {(chosenProduct.Sold ? "" : "not ")}sold.");
